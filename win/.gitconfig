@@ -1,0 +1,41 @@
+[user]
+	name = CH3CHO
+	email = ch3cho@qq.com
+[credential]
+	helper = manager
+[core]
+	autocrlf = true 
+	safecrlf = true
+	editor = vim
+[alias]
+    co = checkout
+    cp = cherry-pick
+    rb = rebase
+    rba = rebase --abort
+    rbc = rebase --continue
+    rs = reset
+    rsh = reset --hard
+    ci = commit
+    st = status
+    br = branch
+	fp = fetch -p
+	pp = pull -p
+	pr = pull --rebase
+    hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
+	
+#[http]
+#	proxy = 
+	
+#[https]
+#	proxy = 
+  
+#[includeIf "gitdir:~/Projects/custom"]
+#    path = .gitconfig_custom
+
+#Host github.com
+#    IdentityFile ~/.ssh/id_rsa_github
+
+[url "git@git.dev.sh.ctripcorp.com:ctripgo"]
+	insteadOf = https://github.com/ctripcorp
