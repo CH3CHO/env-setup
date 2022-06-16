@@ -1,0 +1,36 @@
+[user]
+	name = dongyq
+	email = dongyq@trip.com
+[credential]
+	helper = manager
+[core]
+	autocrlf = true 
+	safecrlf = true
+	editor = vim
+[alias]
+    co = checkout
+    cp = cherry-pick
+    rb = rebase
+    rba = rebase --abort
+    rbc = rebase --continue
+    rs = reset
+    rsh = reset --hard
+    ci = commit
+    st = status
+    br = branch
+	fp = fetch -p
+	pp = pull -p
+	pr = pull --rebase
+    hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
+	
+[http]
+	proxy = http://hkproxy.cn1.global.ctrip.com:8080
+	#proxy = http://vpn.realch3cho.com:33080/
+[https]
+	proxy = http://hkproxy.cn1.global.ctrip.com:8080
+	#proxy = http://vpn.realch3cho.com:33080/
+  
+[url "git@git.dev.sh.ctripcorp.com:ctripgo"]
+	insteadOf = https://github.com/ctripcorp

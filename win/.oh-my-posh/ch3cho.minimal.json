@@ -1,0 +1,53 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+	  "newLine": true,
+      "segments": [
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+	  "newLine": true,
+      "segments": [
+		{
+          "foreground": "#00C5C7",
+          "properties": {
+            "time_format": "15:04:05"
+          },
+          "style": "plain",
+          "template": " {{ .CurrentDate | date .Format }} ",
+          "type": "time"
+        },
+        {
+          "foreground": "#77E4F7",
+          "properties": {
+            "style": "full"
+          },
+          "style": "plain",
+          "template": "{{ .Path }} ",
+          "type": "path"
+        },
+        {
+		  "properties": {
+            "branch_icon": "",
+            "fetch_status": true
+          },
+          "style": "plain",
+          "template": "({{ if or (.Working.Changed) (.Staging.Changed) (gt .StashCount 0) }}<#ffdd86>{{ .HEAD }}</>{{ else }}{{ .HEAD }}{{ end }}{{ if .Staging.Changed }} <#98c379>{{ .Staging.String }}</>{{ end }}{{ if .Working.Changed }} <#d16971>{{ .Working.String }}</>{{ end }}) ",
+          "type": "git"
+        },
+        {
+          "foreground": "#43D426",
+          "style": "plain",
+          "template": "\u276f ",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "version": 2
+}
