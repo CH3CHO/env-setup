@@ -16,9 +16,6 @@ Function Download {
     }
 }
 
-Start-Process http://github.com/PowerShell/PowerShell/releases/latest
-Start-Process https://github.com/genzj/pybingwallpaper/releases/latest
-
 # Setup context variables
 $WORKING_DISK = "D:"
 $DOWNLOADS_FOLDER = "$WORKING_DISK\Downloads"
@@ -31,7 +28,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object
 Set-ExecutionPolicy RemoteSigned -scope CurrentUser;
 $env:SCOOP = "$TOOLS_FOLDER\scoop"
 [Environment]::SetEnvironmentVariable('SCOOP', $env:SCOOP, 'User')
-Invoke-WebRequest get.scoop.sh | Invoke-Expression
+Invoke-Expression "& {$(Invoke-RestMethod get.scoop.sh)} -RunAsAdmin"
 scoop update
 scoop bucket add extras
 
@@ -49,4 +46,8 @@ Download https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11
 Download https://archive.apache.org/dist/tomcat/tomcat-7/v7.0.92/bin/apache-tomcat-7.0.92.zip $DOWNLOADS_FOLDER -Extract "$TOOLS_FOLDER"
 Download https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.32/bin/apache-tomcat-8.5.32.zip $DOWNLOADS_FOLDER -Extract "$TOOLS_FOLDER"
 
+# Install Apache Maven
 Download https://dlcdn.apache.org/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.zip $DOWNLOADS_FOLDER -Extract "$TOOLS_FOLDER"
+
+Start-Process http://github.com/PowerShell/PowerShell/releases/latest
+Start-Process https://github.com/genzj/pybingwallpaper/releases/latest
