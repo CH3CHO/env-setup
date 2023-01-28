@@ -14,6 +14,8 @@ set nocompatible
 " Turn on syntax highlighting.
 syntax on
 
+set tabstop=4
+
 " Disable the default Vim startup message.
 set shortmess+=I
 
