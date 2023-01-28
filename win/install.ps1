@@ -35,6 +35,7 @@ scoop bucket add extras
 # Install applications via Scoop
 scoop install autohotkey
 scoop install dnGrep
+scoop install everything
 scoop install gsudo
 scoop install irfanview
 
