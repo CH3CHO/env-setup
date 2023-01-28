@@ -12,6 +12,15 @@
 set nocompatible
 
 set tabstop=4
+set expandtab
+set smartindent
+set list
+if has('gui_running')
+    set listchars=tab:▶\ ,trail:·,extends:\#,nbsp:.,space:·
+else
+    set listchars=tab:>.,trail:.,extends:\#,nbsp:.,space:.
+endif
+set guifont=MesloLGL_NF:h10
 
 " Turn on syntax highlighting.
 syntax on
@@ -82,5 +91,10 @@ inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
 
 packadd! dracula
-syntax enable
 colorscheme dracula
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+call vundle#end()
+filetype plugin indent on

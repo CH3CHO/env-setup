@@ -11,10 +11,18 @@
 " `vim -u foo`).
 set nocompatible
 
+set tabstop=4
+set smartindent
+set list
+if has('gui_running')
+    set listchars=tab:▶\ ,trail:·,extends:\#,nbsp:.
+else
+    set listchars=tab:>.,trail:.,extends:\#,nbsp:.
+endif
+set guifont=MesloLGL_NF:h10
+
 " Turn on syntax highlighting.
 syntax on
-
-set tabstop=4
 
 " Disable the default Vim startup message.
 set shortmess+=I
@@ -80,3 +88,6 @@ inoremap <Left>  <ESC>:echoe "Use h"<CR>
 inoremap <Right> <ESC>:echoe "Use l"<CR>
 inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
+
+packadd! dracula
+colorscheme dracula
