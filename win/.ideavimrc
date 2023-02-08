@@ -12,12 +12,13 @@
 set nocompatible
 
 set tabstop=4
+set expandtab
 set smartindent
 set list
 if has('gui_running')
-    set listchars=tab:▶\ ,trail:·,extends:\#,nbsp:.
+    set listchars=tab:▶\ ,trail:·,extends:\#,nbsp:.,space:·
 else
-    set listchars=tab:>.,trail:.,extends:\#,nbsp:.
+    set listchars=tab:>.,trail:.,extends:\#,nbsp:.,space:.
 endif
 set guifont=MesloLGL_NF:h10
 
@@ -83,21 +84,25 @@ nnoremap <Left>  :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up>    :echoe "Use k"<CR>
 nnoremap <Down>  :echoe "Use j"<CR>
-
 " ...and in insert mode
 inoremap <Left>  <ESC>:echoe "Use h"<CR>
 inoremap <Right> <ESC>:echoe "Use l"<CR>
 inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
+
 inoremap <C-h> <Left>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
+inoremap <C-w> <S-Right>
+inoremap <C-b> <S-Left>
 
 cnoremap <C-h> <Left>
 cnoremap <C-j> <Down>
 cnoremap <C-k> <Up>
 cnoremap <C-l> <Right>
+cnoremap <C-w> <S-Right>
+cnoremap <C-b> <S-Left>
 
 packadd! dracula
 colorscheme dracula

@@ -94,11 +94,15 @@ inoremap <C-h> <Left>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
+inoremap <C-w> <S-Right>
+inoremap <C-b> <S-Left>
 
 cnoremap <C-h> <Left>
 cnoremap <C-j> <Down>
 cnoremap <C-k> <Up>
 cnoremap <C-l> <Right>
+cnoremap <C-w> <S-Right>
+cnoremap <C-b> <S-Left>
 
 packadd! dracula
 colorscheme dracula
