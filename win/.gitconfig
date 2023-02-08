@@ -18,16 +18,16 @@
     ci = commit
     st = status
     br = branch
-	fp = fetch -p
-	pp = pull -p
-	pr = pull --rebase
+    fp = fetch -p --all
+    pp = pull -p --all
+    pr = pull --rebase
     hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
     type = cat-file -t
     dump = cat-file -p
-	
+
 #[http]
 #	proxy = 
-	
+
 #[https]
 #	proxy = 
   
