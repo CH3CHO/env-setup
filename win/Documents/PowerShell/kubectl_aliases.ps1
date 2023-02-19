@@ -10,6 +10,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+function kn() { & kubectl config set-context --current --namespace=$args }
+function kcgc() { & kubectl config get-contexts }
 function k() { & kubectl $args }
 function ksys() { & kubectl --namespace=kube-system $args }
 function ka() { & kubectl apply --recursive -f $args }

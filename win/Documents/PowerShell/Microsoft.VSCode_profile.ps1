@@ -3,4 +3,7 @@ oh-my-posh init pwsh --config ~/.oh-my-posh/ch3cho.minimal.json | Invoke-Express
 New-Alias ll ls
 New-Alias vi vim
 Import-Module posh-git
-PowerShell.exe -ExecutionPolicy Bypass -File "$(Split-Path -Path $PROFILE)\kubectl_aliases.ps1"
+$Policy = Get-ExecutionPolicy
+Set-ExecutionPolicy Bypass -Scope Process
+. "$(Split-Path -Path $PROFILE)\kubectl_aliases.ps1"
+Set-ExecutionPolicy $Policy -Scope Process
