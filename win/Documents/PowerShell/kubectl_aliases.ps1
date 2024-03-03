@@ -29,6 +29,10 @@ function kpf() { & kubectl port-forward $args }
 function kg() { & kubectl get $args }
 function ksysg() { & kubectl --namespace=kube-system get $args }
 function kd() { & kubectl describe $args }
+function ke() { & kubectl edit $args }
+function kecm() { & kubectl edit $args }
+function kedep() { & kubectl edit deployment $args }
+function kesec() { & kubectl edit secret $args }
 function ksysd() { & kubectl --namespace=kube-system describe $args }
 function krm() { & kubectl delete $args }
 function ksysrm() { & kubectl --namespace=kube-system delete $args }

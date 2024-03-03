@@ -11,8 +11,11 @@
 " `vim -u foo`).
 set nocompatible
 
+set clipboard^=unnamed,unnamedplus
+
 set tabstop=4
 set expandtab
+set shiftwidth=4
 set smartindent
 set list
 if has('gui_running')
@@ -106,3 +109,9 @@ cnoremap <C-b> <S-Left>
 
 packadd! dracula
 colorscheme dracula
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+call vundle#end()
+filetype plugin indent on

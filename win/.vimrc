@@ -11,8 +11,16 @@
 " `vim -u foo`).
 set nocompatible
 
+set nobackup       " no backup files
+set noswapfile     " no swap files
+set nowritebackup  " only in case you don't want a backup file while editing
+set noundofile     " no undo files
+
+set clipboard^=unnamed,unnamedplus
+
 set tabstop=4
 set expandtab
+set shiftwidth=4
 set smartindent
 set list
 if has('gui_running')
@@ -104,11 +112,21 @@ cnoremap <C-l> <Right>
 cnoremap <C-w> <S-Right>
 cnoremap <C-b> <S-Left>
 
-packadd! dracula
+call plug#begin()
+
+Plug 'dracula/vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'dracula/vim'
+Plug 'yegappan/taglist'
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+
+call plug#end()
+
+filetype plugin indent on
+
 colorscheme dracula
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-call vundle#end()
-filetype plugin indent on
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
